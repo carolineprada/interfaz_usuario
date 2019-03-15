@@ -2,11 +2,12 @@
 
 	session_start();
 
+	include('conexion.php');
 	if (isset($_POST['email']) and isset($_POST['password'])) 
 	{
-		include('conexion.php');
-		$emailusuario=mysqli_real_escape_string(mysqli $conn ,$_POST['email']);
-		$password=mysqli_real_escape_string(($conn), $_POST['password']);
+		
+		$emailusuario=mysqli_real_escape_string($conn ,$_POST['email']);
+		$password=mysqli_real_escape_string($conn, $_POST['password']);
 		$comprobacion_del_nombre= 'SELECT * FROM usuario WHERE email= "' .$emailusuario. '"';
 		$comprobacion= $conn->query ($comprobacion_del_nombre);
 
