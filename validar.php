@@ -13,7 +13,7 @@
 
 		if ($comprobacion->num_rows>0) 
 		{
-			$consulta_a_la_base =mysqli_query(($conn), 'SELECT password FROM usuario WHERE email= " ' .$emailusuario. ' " ');
+			$consulta_a_la_base =mysqli_query($conn, 'SELECT password FROM usuario WHERE email= " ' .$emailusuario. ' " ');
 			$recoger_dato=mysqli_fetch_assoc($consulta_a_la_base);
 			$comprobacion_password= password_verify($password, $pass['password']);
 			if ($comprobacion_password)
